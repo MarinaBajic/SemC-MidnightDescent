@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -12,10 +13,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask jumpableGround;
 
     private float directionX;
-    [SerializeField] private float moveSpeed = 7f;
+    [SerializeField] private float walkSpeed = 6f;
+    [SerializeField] private float runSpeed = 10f;
     [SerializeField] private float jumpForce = 12f;
 
-    private enum MovementState { idle, running, jumping, falling }
+    private enum MovementState { idle, walking, running, jumping, falling }
 
     private void Start()
     {
@@ -27,7 +29,12 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        float moveSpeed = walkSpeed;
         directionX = Input.GetAxisRaw("Horizontal");
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            moveSpeed = runSpeed;
+        }
         rigidBody.velocity = new Vector2(directionX * moveSpeed, rigidBody.velocity.y);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -44,13 +51,27 @@ public class PlayerMovement : MonoBehaviour
 
         if (directionX > 0f)
         {
-            state = MovementState.running;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                state = MovementState.running;
+            }
+            else
+            {
+                state = MovementState.walking;
+            }
             spriteRenderer.flipX = false;
         }
         else if (directionX < 0f)
         {
-            state = MovementState.running;
-            spriteRenderer.flipX = true;
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                state = MovementState.running;
+            }
+            else
+            {
+                state = MovementState.walking;
+            }
+                spriteRenderer.flipX = true;
         }
         else
         {
