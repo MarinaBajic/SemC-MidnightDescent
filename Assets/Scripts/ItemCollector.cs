@@ -20,14 +20,14 @@ public class ItemCollector : MonoBehaviour
         {
             Destroy(collision.gameObject);
             gemsCollected++;
-            gemsCounter.text = "Gems: " + gemsCollected + "/" + gemsSum;
+            gemsCounter.text = "Gems:  " + gemsCollected + "/" + gemsSum;
         }
 
         if (collision.gameObject.CompareTag("Cherry"))
         {
             Destroy(collision.gameObject);
             cherriesCollected++;
-            cherriesCounter.text = "Gems: " + cherriesCollected + "/" + cherriesSum;
+            cherriesCounter.text = "Cherries:  " + cherriesCollected + "/" + cherriesSum;
         }
     }
 }
