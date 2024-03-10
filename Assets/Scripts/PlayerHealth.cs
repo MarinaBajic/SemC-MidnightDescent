@@ -15,19 +15,17 @@ public class PlayerHealth : MonoBehaviour
         health = maxHealth;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void TakeDamage(int damage)
     {
-        if (collision.gameObject.CompareTag("Wizard"))
+        health -= damage;
+
+        if (health <= 0)
         {
-            health -= 2;
-
-            if (health <= 0)
-            {
-                Destroy(gameObject);
-                return;
-            }
-
-            healthStatus.text = "Health:  " + health;
+            healthStatus.text = "Health:  dead";
+            Destroy(gameObject);
+            return;
         }
+
+        healthStatus.text = "Health:  " + health;
     }
 }
