@@ -5,15 +5,9 @@ using UnityEngine;
 public class WaypointFollower : MonoBehaviour
 {
     [SerializeField] private GameObject[] waypoints;
-    private Rigidbody2D rigidBody;
     private int currentWaypointIndex = 0;
 
     [SerializeField] private float speed = 2f;
-
-    private void Start()
-    {
-        rigidBody = GetComponent<Rigidbody2D>();
-    }
 
     private void Update()
     {
