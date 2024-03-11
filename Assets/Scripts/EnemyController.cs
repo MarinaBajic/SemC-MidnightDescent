@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
     {
         RaycastHit2D hit = Physics2D.BoxCast(
             capsuleCollider.bounds.center + transform.right * range * transform.localScale.x, 
-            new Vector2(capsuleCollider.bounds.size.x * 2, capsuleCollider.bounds.size.y), 0f, Vector2.left, 0f, playerLayer);
+            capsuleCollider.bounds.size, 0f, Vector2.left, 0f, playerLayer);
         
         if (hit.collider != null)
         {
@@ -52,7 +52,7 @@ public class EnemyController : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(
             capsuleCollider.bounds.center + transform.right * range * transform.localScale.x,
-            new Vector2(capsuleCollider.bounds.size.x * 2, capsuleCollider.bounds.size.y));
+            capsuleCollider.bounds.size);
     }
 
     private void DamagePlayer()

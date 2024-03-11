@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -10,11 +11,13 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI healthStatus;
 
+    private Rigidbody2D rigidBody;
     private Animator animator;
 
     private void Start()
     {
         health = maxHealth;
+        rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
@@ -26,10 +29,20 @@ public class PlayerHealth : MonoBehaviour
         if (health <= 0)
         {
             health = 0;
-            animator.SetTrigger("dead");
-            Destroy(gameObject);
+            Die();
         }
 
         healthStatus.text = "Health:  " + health;
+    }
+
+    private void Die()
+    {
+        rigidBody.bodyType = RigidbodyType2D.Static;
+        animator.SetTrigger("dead");
+    }
+
+    private void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
