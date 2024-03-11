@@ -21,6 +21,14 @@ public class PlayerHealth : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Trap"))
+        {
+            TakeDamage(1);
+        }
+    }
+
     public void TakeDamage(int damage)
     {
         health -= damage;
