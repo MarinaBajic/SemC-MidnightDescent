@@ -10,20 +10,24 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI healthStatus;
 
+    private Animator animator;
+
     private void Start()
     {
         health = maxHealth;
+        animator = GetComponent<Animator>();
     }
 
     public void TakeDamage(int damage)
     {
         health -= damage;
+        animator.SetTrigger("hurt");
 
         if (health <= 0)
         {
-            healthStatus.text = "Health:  dead";
+            health = 0;
+            animator.SetTrigger("dead");
             Destroy(gameObject);
-            return;
         }
 
         healthStatus.text = "Health:  " + health;
