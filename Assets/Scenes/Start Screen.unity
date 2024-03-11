@@ -410,7 +410,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 792307301}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
@@ -1002,8 +1002,8 @@ RectTransform:
   m_Children:
   - {fileID: 924104608}
   - {fileID: 1286484623}
-  - {fileID: 565875095}
   - {fileID: 792307297}
+  - {fileID: 565875095}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
