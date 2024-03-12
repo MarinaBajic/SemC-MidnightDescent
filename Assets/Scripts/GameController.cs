@@ -7,8 +7,9 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    private static int totalLevels = 2;
+    private static readonly int totalLevels = 2;
     private static int currentLevel;
+
     public void StartGame()
     {
         currentLevel = 1;

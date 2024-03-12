@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class ItemCollector : MonoBehaviour
 {
-    public int totalGems = 5;
-    public int totalCherries = 10;
+    public static int totalGems = 5;
+    public static int totalCherries = 10;
 
     public static int collectedGems = 0;
     public static int collectedCherries = 0;
