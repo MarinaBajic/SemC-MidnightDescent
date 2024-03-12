@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 10;
     [SerializeField] private int health;
+    private float thrust = 1f;
 
     [SerializeField] private TextMeshProUGUI healthStatus;
 
