@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
 
     public void RestartLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
     public void ExitGame()

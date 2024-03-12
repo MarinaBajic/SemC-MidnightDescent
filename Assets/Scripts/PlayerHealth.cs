@@ -49,4 +49,9 @@ public class PlayerHealth : MonoBehaviour
         animator.SetTrigger("dead");
     }
 
+    private void DiedRestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
 }
