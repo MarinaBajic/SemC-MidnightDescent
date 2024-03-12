@@ -7,16 +7,17 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float attackCooldown;
     [SerializeField] private float range;
     [SerializeField] private int damage;
-    [SerializeField] private CapsuleCollider2D capsuleCollider;
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 
+    private CapsuleCollider2D capsuleCollider;
     private Animator animator;
 
     private PlayerHealth playerHealth;
 
     private void Start()
     {
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
     }
 
