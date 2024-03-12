@@ -5,29 +5,29 @@ using UnityEngine;
 
 public class ItemCollector : MonoBehaviour
 {
-    private int gemsSum = 5;
-    private int cherriesSum = 10;
+    public int totalGems = 5;
+    public int totalCherries = 10;
 
-    private int gemsCollected = 0;
-    private int cherriesCollected = 0;
+    public static int collectedGems = 0;
+    public static int collectedCherries = 0;
 
-    [SerializeField] private TextMeshProUGUI gemsCounter;
-    [SerializeField] private TextMeshProUGUI cherriesCounter;
+    [SerializeField] private TextMeshProUGUI counterGems;
+    [SerializeField] private TextMeshProUGUI counterCherries;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Gem"))
         {
             Destroy(collision.gameObject);
-            gemsCollected++;
-            gemsCounter.text = "Gems:  " + gemsCollected + "/" + gemsSum;
+            collectedGems++;
+            counterGems.text = "Gems:  " + collectedGems + "/" + totalGems;
         }
 
         if (collision.gameObject.CompareTag("Cherry"))
         {
             Destroy(collision.gameObject);
-            cherriesCollected++;
-            cherriesCounter.text = "Cherries:  " + cherriesCollected + "/" + cherriesSum;
+            collectedCherries++;
+            counterCherries.text = "Cherries:  " + collectedCherries + "/" + totalCherries;
         }
     }
 }

@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 
-    private CapsuleCollider2D capsuleCollider;
+    [SerializeField] private CapsuleCollider2D capsuleCollider;
     private Animator animator;
 
     private PlayerHealth playerHealth;
@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
     private bool PlayerInSight()
     {
         RaycastHit2D hit = Physics2D.BoxCast(
-            capsuleCollider.bounds.center + transform.right * range * transform.localScale.x, 
+            capsuleCollider.bounds.center + range * transform.localScale.x * transform.right, 
             capsuleCollider.bounds.size, 0f, Vector2.left, 0f, playerLayer);
         
         if (hit.collider != null)
@@ -52,7 +52,7 @@ public class EnemyController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(
-            capsuleCollider.bounds.center + transform.right * range * transform.localScale.x,
+            capsuleCollider.bounds.center + range * transform.localScale.x * transform.right,
             capsuleCollider.bounds.size);
     }
 

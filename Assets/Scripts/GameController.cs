@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -17,6 +19,8 @@ public class GameController : MonoBehaviour
 
     public void RestartLevel()
     {
+        ItemCollector.collectedGems = 0;
+        ItemCollector.collectedCherries = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 
@@ -24,4 +28,5 @@ public class GameController : MonoBehaviour
     {
         Application.Quit();
     }
+
 }

@@ -49,8 +49,10 @@ public class PlayerHealth : MonoBehaviour
         animator.SetTrigger("dead");
     }
 
-    private void DiedRestartLevel()
+    private void RestartLevel()
     {
+        ItemCollector.collectedGems = 0;
+        ItemCollector.collectedCherries = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
