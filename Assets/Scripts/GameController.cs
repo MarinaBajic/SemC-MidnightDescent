@@ -7,21 +7,34 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    private static int totalLevels = 2;
+    private static int currentLevel;
     public void StartGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        currentLevel = 1;
+        SceneManager.LoadScene("Level 1");
     }
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        currentLevel++;
+        if (currentLevel > totalLevels)
+        {
+            SceneManager.LoadScene("End Screen");
+        }
+        else
+        {
+            ItemCollector.collectedGems = 0;
+            ItemCollector.collectedCherries = 0;
+            SceneManager.LoadScene("Level " + currentLevel);
+        }
     }
 
     public void RestartLevel()
     {
         ItemCollector.collectedGems = 0;
         ItemCollector.collectedCherries = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("Level " + currentLevel);
     }
 
     public void ExitGame()

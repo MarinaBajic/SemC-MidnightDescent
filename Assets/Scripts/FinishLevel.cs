@@ -17,7 +17,7 @@ public class FinishLevel : MonoBehaviour
 
     public void CompleteLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Level Complete Screen");
     }
 
 }
