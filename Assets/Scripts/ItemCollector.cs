@@ -14,6 +14,12 @@ public class ItemCollector : MonoBehaviour
     [SerializeField] private TextMeshProUGUI counterGems;
     [SerializeField] private TextMeshProUGUI counterCherries;
 
+    private void Start()
+    {
+        counterGems.text = "Gems:  " + collectedGems + "/" + totalGems;
+        counterCherries.text = "Cherries:  " + collectedCherries + "/" + totalCherries;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Gem"))

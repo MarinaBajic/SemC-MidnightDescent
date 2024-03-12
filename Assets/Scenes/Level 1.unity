@@ -35102,7 +35102,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Gems:  0'
+  m_text: 'Gems:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a258dc4841961147bd9f713f71efc58, type: 2}
   m_sharedMaterial: {fileID: -8884240659723792807, guid: 7a258dc4841961147bd9f713f71efc58, type: 2}
@@ -36114,8 +36114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182452ebcd080f84f81096aaa2ebfb2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collectedGems: 0
-  collectedCherries: 0
+  totalGems: 5
+  totalCherries: 10
   counterGems: {fileID: 1254585407}
   counterCherries: {fileID: 1802734598}
 --- !u!114 &1742119738
@@ -36221,7 +36221,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Cherries:  0'
+  m_text: 'Cherries:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7a258dc4841961147bd9f713f71efc58, type: 2}
   m_sharedMaterial: {fileID: -8884240659723792807, guid: 7a258dc4841961147bd9f713f71efc58, type: 2}
