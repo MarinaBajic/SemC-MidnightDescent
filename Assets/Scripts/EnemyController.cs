@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float attackCooldown;
-    [SerializeField] private float range;
-    [SerializeField] private int damage;
+    [SerializeField] private float attackCooldown = 1;
+    [SerializeField] private float range = 1;
+    [SerializeField] private int damage = 2;
     [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 

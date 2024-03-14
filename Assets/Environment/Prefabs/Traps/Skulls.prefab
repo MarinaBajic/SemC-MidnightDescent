@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3023022472681149000}
   - component: {fileID: 7535406005965070129}
   - component: {fileID: 4167664393792040271}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Skulls
   m_TagString: Trap
   m_Icon: {fileID: 0}
