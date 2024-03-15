@@ -11,6 +11,8 @@ TagManager:
   - NPC
   - Woman
   - Dialogue
+  - Wizard
+  - BG Music
   layers:
   - Default
   - TransparentFX

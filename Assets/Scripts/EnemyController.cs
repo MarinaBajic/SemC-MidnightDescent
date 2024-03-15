@@ -13,6 +13,9 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private CapsuleCollider2D capsuleCollider;
     private Animator animator;
 
+    [SerializeField] private AudioSource enemyAudioSource;
+    [SerializeField] private AudioSource backgroundMusic;
+
     private PlayerHealth playerHealth;
 
     private void Start()
@@ -62,6 +65,18 @@ public class EnemyController : MonoBehaviour
         {
             playerHealth.TakeDamage(damage);
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        backgroundMusic.Pause();
+        enemyAudioSource.Play();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        enemyAudioSource.Pause();
+        backgroundMusic.Play();
     }
 
 }
