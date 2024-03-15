@@ -8,6 +8,8 @@ TagManager:
   - Cherry
   - Trap
   - Enemy
+  - NPC
+  - Woman
   layers:
   - Default
   - TransparentFX
