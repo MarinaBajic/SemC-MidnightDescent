@@ -14,6 +14,8 @@ public class ItemCollector : MonoBehaviour
     [SerializeField] private TextMeshProUGUI counterGems;
     [SerializeField] private TextMeshProUGUI counterCherries;
 
+    [SerializeField] private AudioSource collectAudioSource;
+
     private void Start()
     {
         counterGems.text = "Gems:  " + collectedGems + "/" + totalGems;
@@ -24,6 +26,7 @@ public class ItemCollector : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Gem"))
         {
+            collectAudioSource.Play();
             Destroy(collision.gameObject);
             collectedGems++;
             counterGems.text = "Gems:  " + collectedGems + "/" + totalGems;
@@ -31,6 +34,7 @@ public class ItemCollector : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Cherry"))
         {
+            collectAudioSource.Play();
             Destroy(collision.gameObject);
             collectedCherries++;
             counterCherries.text = "Cherries:  " + collectedCherries + "/" + totalCherries;

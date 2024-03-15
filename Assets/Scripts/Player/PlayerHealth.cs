@@ -14,6 +14,9 @@ public class PlayerHealth : MonoBehaviour
     private Rigidbody2D rigidBody;
     private Animator animator;
 
+    [SerializeField] private AudioSource hurtSoundEffect;
+    [SerializeField] private AudioSource deathSoundEffect;
+
     private void Start()
     {
         health = maxHealth;
@@ -32,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        hurtSoundEffect.Play();
         animator.SetTrigger("hurt");
 
         if (health <= 0)
@@ -46,6 +50,7 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         rigidBody.bodyType = RigidbodyType2D.Static;
+        deathSoundEffect.Play();
         animator.SetTrigger("dead");
     }
 
