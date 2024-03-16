@@ -31,7 +31,7 @@ public class ItemCollector : MonoBehaviour
             collectedItem = collision.gameObject;
             collectAudioSource.Play();
             collectedItem.GetComponent<Animator>().SetTrigger("collected");
-            Invoke("RemoveItem", 0.5f);
+            Invoke("RemoveItem", 0.3f);
         }
 
         if (collision.gameObject.CompareTag("Gem"))
