@@ -11,6 +11,8 @@ public class ItemCollector : MonoBehaviour
     public static int collectedGems = 0;
     public static int collectedCherries = 0;
 
+    private GameObject collectedItem;
+
     [SerializeField] private TextMeshProUGUI counterGems;
     [SerializeField] private TextMeshProUGUI counterCherries;
 
@@ -24,20 +26,29 @@ public class ItemCollector : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.CompareTag("Gem") || collision.gameObject.CompareTag("Cherry"))
+        {
+            collectedItem = collision.gameObject;
+            collectAudioSource.Play();
+            collectedItem.GetComponent<Animator>().SetTrigger("collected");
+            Invoke("RemoveItem", 0.5f);
+        }
+
         if (collision.gameObject.CompareTag("Gem"))
         {
-            collectAudioSource.Play();
-            Destroy(collision.gameObject);
             collectedGems++;
             counterGems.text = "Gems:  " + collectedGems + "/" + totalGems;
         }
 
         if (collision.gameObject.CompareTag("Cherry"))
         {
-            collectAudioSource.Play();
-            Destroy(collision.gameObject);
             collectedCherries++;
             counterCherries.text = "Cherries:  " + collectedCherries + "/" + totalCherries;
         }
+    }
+
+    public void RemoveItem()
+    {
+        Destroy(collectedItem);
     }
 }
