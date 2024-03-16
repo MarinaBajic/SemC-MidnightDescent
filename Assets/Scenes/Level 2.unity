@@ -2312,6 +2312,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0138e3b91b935a04393f5f24a15b95ff, type: 3}
+--- !u!82 &1094716102 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6445534739332882198, guid: 0138e3b91b935a04393f5f24a15b95ff, type: 3}
+  m_PrefabInstance: {fileID: 1094716101}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1116309881
 GameObject:
   m_ObjectHideFlags: 0
@@ -74319,22 +74324,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1864754818224017566, guid: 0649d6867c6288f4eb16745a2e3d09c1, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -756627164, guid: f69ae67204ab2b24c8034dff05dadfda, type: 3}
+    - target: {fileID: 2091509089918030694, guid: 0649d6867c6288f4eb16745a2e3d09c1, type: 3}
+      propertyPath: m_Size.x
+      value: 17.962837
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091509089918030694, guid: 0649d6867c6288f4eb16745a2e3d09c1, type: 3}
+      propertyPath: m_Offset.x
+      value: 1.3182487
+      objectReference: {fileID: 0}
     - target: {fileID: 3892977056631251703, guid: 0649d6867c6288f4eb16745a2e3d09c1, type: 3}
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
-    - target: {fileID: 5919507563013064621, guid: 0649d6867c6288f4eb16745a2e3d09c1, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 6223224091479084204, guid: 0649d6867c6288f4eb16745a2e3d09c1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 7.65
-      objectReference: {fileID: 0}
+    - target: {fileID: 4111305979477571739, guid: 0649d6867c6288f4eb16745a2e3d09c1, type: 3}
+      propertyPath: backgroundMusic
+      value: 
+      objectReference: {fileID: 1094716102}
     - target: {fileID: 6263489938142262857, guid: 0649d6867c6288f4eb16745a2e3d09c1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 82.51
@@ -74374,10 +74379,6 @@ PrefabInstance:
     - target: {fileID: 6263489938142262857, guid: 0649d6867c6288f4eb16745a2e3d09c1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7226591343946074488, guid: 0649d6867c6288f4eb16745a2e3d09c1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -5.44
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

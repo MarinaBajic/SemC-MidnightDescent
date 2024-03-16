@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     private Animator animator;
 
     [SerializeField] private AudioSource enemyAudioSource;
+    [SerializeField] private AudioSource enemyAttackAudioSource;
     [SerializeField] private AudioSource backgroundMusic;
 
     private PlayerHealth playerHealth;
@@ -34,6 +35,7 @@ public class EnemyController : MonoBehaviour
             {
                 cooldownTimer = 0;
                 animator.SetTrigger("enemyAttack");
+                enemyAttackAudioSource.Play();
             }
         }
     }
