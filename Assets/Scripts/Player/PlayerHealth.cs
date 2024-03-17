@@ -6,14 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 10;
+    [SerializeField] private int maxHealth = 5;
     [SerializeField] private int health;
-
-    [SerializeField] private TextMeshProUGUI healthStatus;
 
     private Rigidbody2D rigidBody;
     private Animator animator;
 
+    [SerializeField] private TextMeshProUGUI healthStatus;
     [SerializeField] private AudioSource hurtSoundEffect;
     [SerializeField] private AudioSource deathSoundEffect;
 

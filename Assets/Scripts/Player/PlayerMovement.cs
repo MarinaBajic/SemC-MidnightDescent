@@ -5,21 +5,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private float moveDirection;
+    [SerializeField] private float walkSpeed = 6f;
+    [SerializeField] private float runSpeed = 10f;
+    [SerializeField] private float jumpForce = 12f;
+
     private Rigidbody2D rigidBody;
     private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
     [SerializeField] private LayerMask jumpableGround;
-
-    private float directionX;
-    [SerializeField] private float walkSpeed = 6f;
-    [SerializeField] private float runSpeed = 10f;
-    [SerializeField] private float jumpForce = 12f;
-
-    private enum MovementState { idle, walking, running, jumping, falling }
-
     [SerializeField] private AudioSource jumpSoundEffect;
+    private enum MovementState { idle, walking, running, jumping, falling }
 
     private void Start()
     {
@@ -32,12 +30,12 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         float moveSpeed = walkSpeed;
-        directionX = Input.GetAxisRaw("Horizontal");
+        moveDirection = Input.GetAxisRaw("Horizontal");
         if (Input.GetKey(KeyCode.LeftShift))
         {
             moveSpeed = runSpeed;
         }
-        rigidBody.velocity = new Vector2(directionX * moveSpeed, rigidBody.velocity.y);
+        rigidBody.velocity = new Vector2(moveDirection * moveSpeed, rigidBody.velocity.y);
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
@@ -52,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
     {
         MovementState state;
 
-        if (directionX > 0f)
+        if (moveDirection > 0f)
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -64,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
             }
             spriteRenderer.flipX = false;
         }
-        else if (directionX < 0f)
+        else if (moveDirection < 0f)
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -97,5 +95,4 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
     }
-
 }

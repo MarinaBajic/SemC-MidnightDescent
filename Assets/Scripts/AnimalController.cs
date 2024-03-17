@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class AnimalController : MonoBehaviour
 {
-    private float moveSpeed = 5f;
-    private float jumpForce = 10f;
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float jumpForce = 10f;
 
+    [SerializeField] private BoxCollider2D boxCollider;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidBody;
-    private BoxCollider2D boxCollider;
     private Animator animator;
 
     [SerializeField] private LayerMask jumpableGround;
@@ -37,7 +37,7 @@ public class AnimalController : MonoBehaviour
             Vector2 moveDirection = (playerTransform.position - transform.position).normalized;
             rigidBody.velocity = new Vector2(moveDirection.x * moveSpeed, rigidBody.velocity.y);
 
-            if (IsGrounded() && ObstacleAhead())
+            if (ObstacleAhead())
             {
                 rigidBody.velocity = new Vector2(rigidBody.velocity.x, jumpForce);
             }
@@ -82,15 +82,9 @@ public class AnimalController : MonoBehaviour
         animator.SetInteger("state", (int)state);
     }
 
-    private bool IsGrounded()
-    {
-        return Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.down, .1f, jumpableGround);
-    }
-
     private bool ObstacleAhead()
     {
         RaycastHit2D hit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0f, Vector2.right, .1f, jumpableGround);
-        return hit.collider != null;
+        return hit.collider != null && !hit.collider.CompareTag("Ground");
     }
-
 }

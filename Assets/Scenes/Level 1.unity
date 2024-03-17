@@ -1316,7 +1316,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3023022472681149000, guid: d14cbdd2837897a42acfff567cdfeb16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.845158
+      value: -29.256
       objectReference: {fileID: 0}
     - target: {fileID: 3023022472681149000, guid: d14cbdd2837897a42acfff567cdfeb16, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1775,6 +1775,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273c1c901d58654499e3abbe4eb4d43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveSpeed: 5
+  jumpForce: 10
+  boxCollider: {fileID: 1015849639}
   jumpableGround:
     serializedVersion: 2
     m_Bits: 64
@@ -1840,7 +1843,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01518774, y: -0.59178776}
+  m_Offset: {x: 0.00042772293, y: -0.59178776}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1851,7 +1854,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2985392, y: 0.7512156}
+  m_Size: {x: 0.892539, y: 0.7512156}
   m_EdgeRadius: 0
 --- !u!4 &1031606160 stripped
 Transform:
@@ -22627,7 +22630,7 @@ GameObject:
   - component: {fileID: 1152400129}
   m_Layer: 6
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35993,7 +35996,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3023022472681149000, guid: d14cbdd2837897a42acfff567cdfeb16, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.16
+      value: -1.285
       objectReference: {fileID: 0}
     - target: {fileID: 3023022472681149000, guid: d14cbdd2837897a42acfff567cdfeb16, type: 3}
       propertyPath: m_LocalPosition.y

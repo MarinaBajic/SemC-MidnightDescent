@@ -4,15 +4,15 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    [SerializeField] private float attackCooldown = 1;
-    [SerializeField] private float range = 1;
+    [SerializeField] private float attackCooldown = 1f;
+    [SerializeField] private float range = 1f;
     [SerializeField] private int damage = 2;
-    [SerializeField] private LayerMask playerLayer;
     private float cooldownTimer = Mathf.Infinity;
 
     [SerializeField] private CapsuleCollider2D capsuleCollider;
     private Animator animator;
 
+    [SerializeField] private LayerMask playerLayer;
     [SerializeField] private AudioSource enemyAudioSource;
     [SerializeField] private AudioSource enemyAttackAudioSource;
     [SerializeField] private AudioSource backgroundMusic;
