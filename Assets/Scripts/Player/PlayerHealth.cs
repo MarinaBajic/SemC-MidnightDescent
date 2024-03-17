@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 5;
-    [SerializeField] private int health;
+    private int health;
 
     private Rigidbody2D rigidBody;
     private Animator animator;
@@ -19,6 +19,8 @@ public class PlayerHealth : MonoBehaviour
     private void Start()
     {
         health = maxHealth;
+        healthStatus.text = "Health:  " + health;
+
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }

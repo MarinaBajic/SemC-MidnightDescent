@@ -199,12 +199,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba961f0e79f476c46b2f5ce44d6a7ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpableGround:
-    serializedVersion: 2
-    m_Bits: 64
   walkSpeed: 6
   runSpeed: 10
   jumpForce: 12
+  jumpableGround:
+    serializedVersion: 2
+    m_Bits: 64
   jumpSoundEffect: {fileID: 864996405439572060}
 --- !u!114 &8122513100075956970
 MonoBehaviour:
@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e5821175c473314fbb9501727e4b070, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 5
   health: 12
   healthStatus: {fileID: 0}
   hurtSoundEffect: {fileID: 2020493911132964335}
