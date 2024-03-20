@@ -32,10 +32,6 @@
    - Time your jumps carefully to avoid falling into traps or getting caught by enemies.
    - Keep an eye out for hidden paths and secret areas where valuable items may be found.
 
-## Installation
-
-To play "Midnight Descent," simply download the game files and run the executable.
-
 ## Credits
 
 - Developed by [Marina Bajić](https://github.com/MarinaBajic)
