@@ -1,9 +1,8 @@
 # Midnight Descent
 
-![Gameplay Screenshot - Level 1](Screenshots/lvl1.jpg)
-![Gameplay Screenshot - Level 1](Screenshots/lvl1enemy.jpg)
-![Gameplay Screenshot - Level 2](Screenshots/lvl2.jpg)
-![Gameplay Screenshot - Level 2](Screenshots/lvl2end.jpg)
+| ![Gameplay Screenshot - Level 1](Screenshots/lvl1.jpg) | ![Gameplay Screenshot - Level 1](Screenshots/lvl1enemy.jpg) |
+|:-------------------------:|:-------------------------:|
+| ![Gameplay Screenshot - Level 2](Screenshots/lvl2.jpg) | ![Gameplay Screenshot - Level 2](Screenshots/lvl2end.jpg) |
 
 ## Overview
 
