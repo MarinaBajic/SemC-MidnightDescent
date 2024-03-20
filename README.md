@@ -1,6 +1,9 @@
 # Midnight Descent
 
-![Gameplay Screenshot](screenshot.png)
+![Gameplay Screenshot - Level 1](Screenshots/lvl1.png)
+![Gameplay Screenshot - Level 1](Screenshots/lvl1enemy.png)
+![Gameplay Screenshot - Level 2](Screenshots/lvl2.png)
+![Gameplay Screenshot - Level 2](Screenshots/lvl2end.png)
 
 ## Overview
 
@@ -36,7 +39,7 @@ To play "Midnight Descent," simply download the game files and run the executabl
 
 ## Credits
 
-- Developed by [Marina Bajić]
+- Developed by [Marina Bajić](https://github.com/MarinaBajic)
 - Artwork and Graphics found in [Unity Asset Store](https://assetstore.unity.com/publishers/18720), [Craftpix.net](https://craftpix.net), and [Open Game Art](https://opengameart.org/)
 - Music and Sound Effects found in [Unity Asset Store](https://assetstore.unity.com/)
 
