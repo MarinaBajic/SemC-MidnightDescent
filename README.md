@@ -6,7 +6,7 @@
 
 ## Overview
 
-"Midnight Descent" is a 2D platformer set in a captivating gothic town bathed in the eerie glow of late afternoon. Players take on the role of a mysterious woman vampire navigating through the haunting streets. Accompanied by her faithful feline companion, players must evade menacing werewolves and leap over ghastly obstacles while collecting valuable items to progress through the game.
+Midnight Descent is a 2D platformer set in a captivating gothic town bathed in the eerie glow of late afternoon. Players take on the role of a mysterious woman vampire navigating through the haunting streets. Accompanied by her faithful feline companion, players must evade menacing werewolves and leap over ghastly obstacles while collecting valuable items to progress through the game.
 
 ## Features
 
